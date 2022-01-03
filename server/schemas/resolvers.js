@@ -39,6 +39,22 @@ const resolvers = {
       const token = signToken(user);
       return {token, user};
     },
+    saveBook: async (parent, { input }, context) => {
+      const UserVar = await User.findByIdAndUpdate(
+        { _id: context.user._id },
+        { $addToSet: { savedBooks: input } },
+        { new: true }
+        );
+        return updatedUser;
+    },
+    removeBook: async (parent, args, context) => {
+      const UserVar = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $pull: { savedBooks: { bookId: args.bookId } } },
+        { new: true }
+        );
+        return updatedUser;
+    }
   }
 };
 
