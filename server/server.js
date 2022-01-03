@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 // import ApolloServer
 const { ApolloServer } = require('apollo-server-express');
 
@@ -32,7 +33,6 @@ startServer();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
 
 db.once('open', () => {
   app.listen(PORT, () => {
