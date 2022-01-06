@@ -75,10 +75,17 @@ const SearchBooks = () => {
     }
 
     try {
-      const { data }= await saveBook({
-        variables: {bookData: { ...bookToSave}}
+      // updated this to the GraphQL SAVE_BOOK mutation
+      const response = await saveBook({
+        variables: {
+          input: bookToSave,
+        }
       });
 
+      // had to remove .ok for this to work
+      if (!response) {
+        throw new Error('something went wrong!');
+      }
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
