@@ -14,16 +14,5 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  },
-  "dependencies": {
-    "nodemon": "^2.0.15"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kferguson52/book-search-engine.git"
-  },
-  "bugs": {
-    "url": "https://github.com/kferguson52/book-search-engine/issues"
-  },
-  "homepage": "https://github.com/kferguson52/book-search-engine#readme"
+  }
 }
